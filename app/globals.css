@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+  body { @apply bg-ink-950 text-white antialiased; font-feature-settings: 'ss01', 'cv11'; }
+  ::selection { background: rgba(122, 137, 236, 0.35); }
+  input, textarea, select { font-size: 16px; } /* stops iOS zoom on focus */
+  @media (min-width: 768px) { input, textarea, select { font-size: inherit; } }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10; }
+  .glass {
+    background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+    border: 1px solid rgba(255,255,255,0.09);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  .hero-bg {
+    background:
+      radial-gradient(60% 55% at 78% 18%, rgba(98, 118, 196, 0.55) 0%, rgba(98,118,196,0) 70%),
+      radial-gradient(45% 40% at 12% 8%, rgba(70, 86, 160, 0.35) 0%, rgba(70,86,160,0) 70%),
+      linear-gradient(180deg, #1b2652 0%, #121b3d 38%, #0b1226 70%, #080d1d 100%);
+  }
+  .text-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #c9d1ef 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .btn-light {
+    @apply inline-flex items-center gap-2 rounded-full bg-white py-1.5 pl-5 pr-1.5 text-sm font-medium text-ink-900 transition hover:bg-ink-100 active:scale-[.98];
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ink-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink-700 active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 active:scale-[.98] disabled:opacity-60;
+  }
+  .field {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-100;
+  }
+  .field-dark {
+    @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition placeholder:text-ink-200/50 focus:border-brand-300/60 focus:ring-4 focus:ring-brand-400/15;
+  }
+  .label { @apply mb-1.5 block text-sm font-medium text-slate-700; }
+  .panel { @apply rounded-2xl border border-slate-200/70 bg-white shadow-soft; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize; }
+  .skeleton {
+    background: linear-gradient(90deg, #eef1f7 25%, #e2e7f2 37%, #eef1f7 63%);
+    background-size: 400% 100%;
+    @apply animate-shimmer rounded-lg;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom), 0.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
