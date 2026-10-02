@@ -8,7 +8,7 @@ import Icon from '@/components/ui/Icon';
 const LINKS = [
   { label: 'Features', href: '#features' },
   { label: 'Products', href: '#products' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Security', href: '#transparency' },
   { label: 'About', href: '#about' },
   { label: 'Resources', href: '#faq' },
 ];

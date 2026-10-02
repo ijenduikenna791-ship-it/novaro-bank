@@ -8,7 +8,7 @@ import Features from '@/components/landing/Features';
 import Products from '@/components/landing/Products';
 import HowItWorks from '@/components/landing/HowItWorks';
 import Security from '@/components/landing/Security';
-import Pricing from '@/components/landing/Pricing';
+import Transparency from '@/components/landing/Transparency';
 import FAQ from '@/components/landing/FAQ';
 import CTA from '@/components/landing/CTA';
 import Footer from '@/components/landing/Footer';
@@ -26,7 +26,7 @@ export default function LandingPage() {
         <Products />
         <HowItWorks />
         <Security />
-        <Pricing />
+        <Transparency />
         <FAQ />
         <CTA />
       </main>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Logo from '@/components/ui/Logo';
 
 const COLS = [
-  { title: 'Product', links: [['Features', '#features'], ['Products', '#products'], ['Pricing', '#pricing']] },
+  { title: 'Product', links: [['Features', '#features'], ['Products', '#products'], ['Transparency', '#transparency']] },
   { title: 'Company', links: [['About', '#about'], ['Resources', '#faq'], ['Support', '/dashboard/support']] },
   { title: 'Account', links: [['Open account', '/register'], ['Login', '/login'], ['Admin', '/admin/login']] },
 ];
